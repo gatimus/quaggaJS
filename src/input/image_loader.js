@@ -27,7 +27,7 @@ ImageLoader.load = function(directory, callback, offset, size, sequence) {
                 notloadedImgs.splice(x, 1);
                 for (var y = 0; y < htmlImagesSrcArray.length; y++) {
                     var imgName = htmlImagesSrcArray[y].substr(htmlImagesSrcArray[y].lastIndexOf("/"));
-                    if (loadedImg.src.lastIndexOf(imgName) !== -1) {
+                    if (decodeURIComponent(loadedImg.src).lastIndexOf(imgName) !== -1) {
                         htmlImagesArray[y] = {img: loadedImg};
                         break;
                     }
